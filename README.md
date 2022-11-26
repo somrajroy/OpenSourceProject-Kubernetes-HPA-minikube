@@ -5,7 +5,7 @@ Horizontal Pod Autoscaling in Kubernetes (minikube) <br/>
 ![image](https://user-images.githubusercontent.com/92582005/204075069-1855a129-bf24-4bb8-8b99-5d0b4b6b06c3.png) <br/><br/>
 ![image](https://user-images.githubusercontent.com/92582005/204074904-19404232-0f72-4c9a-a9bf-4e291ff56670.png) <br/>
 ### Steps for HPA demo. <br/>
-* Enable the metrics-server addon for minikube. <br/>
+* Enable the metrics-server addon for minikube. The metrics-server fetches resource metrics from the kubelets and exposes them in the Kubernetes API server through the Metrics API for use by the HPA and VPA. <br/>
   $ minikube addons enable metrics-server <br/>
 * It’s helpful to use lower collection intervals of 1 minute and 10 seconds to see more immediate action.<br/>
   $ minikube start — extra-config=controller-manager.horizontal-pod-autoscaler-upscale-delay=1m — extra-config=controller-manager.horizontal-pod-autoscaler-downscale-delay=1m — extra-config=controller-manager.horizontal-pod-autoscaler-sync-period=10s — extra-config=controller-manager.horizontal-pod-autoscaler-downscale-stabilization=1m <br/>
