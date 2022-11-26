@@ -9,3 +9,27 @@ Horizontal Pod Autoscaling in Kubernetes (minikube) <br/>
   $ minikube addons enable metrics-server <br/>
 * It’s helpful to use lower collection intervals of 1 minute and 10 seconds to see more immediate action.<br/>
   $ minikube start — extra-config=controller-manager.horizontal-pod-autoscaler-upscale-delay=1m — extra-config=controller-manager.horizontal-pod-autoscaler-downscale-delay=1m — extra-config=controller-manager.horizontal-pod-autoscaler-sync-period=10s — extra-config=controller-manager.horizontal-pod-autoscaler-downscale-stabilization=1m <br/>
+* Download and deploy the manifest HPA.yaml <br/>
+  $ kubectl apply -f HPA.yaml <br/>
+* Check the pod and service created. Wait for the pod to be in running state <br/>
+  $ kubectl get pod,svc <br/>
+  ![image](https://user-images.githubusercontent.com/92582005/204087144-6d7b705c-0556-47c1-8ff0-fd07ab3fd609.png) <br/>
+* Create the HorizontalPodAutoscaler. <br/>
+  $ kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=5 <br/>
+* Check the current status of the newly-made HorizontalPodAutoscaler, by running below command. The output should be similar to the image. <br/>
+  $ kubectl get hpa <br/>
+  ![image](https://user-images.githubusercontent.com/92582005/204087417-9d3dd80f-2fc6-460c-881c-8649ee43bc19.png) <br/>
+* Check how the autoscaler reacts to increased load. To do this, start a different Pod to act as a client. The container within the client Pod runs in an infinite loop, sending queries to the php-apache service. Open a new window and run the below command. <br/>
+  $ kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done" <br/>
+* In main window run the below command. (type Ctrl+C to end the watch). Within a minute or so, the terminal should display the higher CPU load like the image below<br/>
+  $ kubectl get hpa php-apache --watch <br/>
+  ![image](https://user-images.githubusercontent.com/92582005/204087674-17e8a7d3-0492-4b44-ad98-0bb65ee2b7ab.png) <br/>
+* After the load increased the deployment size will also increase and can be seen by running below command.
+  $ kubectl get deployment php-apache <br/>
+  ![image](https://user-images.githubusercontent.com/92582005/204087790-fbc727b5-6829-4494-a369-27349ee33b20.png) <br/>
+* After few moments if the pods are checked then all 5 pods will be running. (replica count matching the figure from the HorizontalPodAutoscaler) <br/>
+  $ kubectl get pods <br/>
+  ![image](https://user-images.githubusercontent.com/92582005/204087844-804a1d9b-d455-4462-8faa-c82a85178f67.png) <br/>
+* Stooping the load - In the terminal where the Pod that runs a busybox image, terminate the load generation by typing <Ctrl> + C. <br/>
+* After few mins if we check the deployment and replicas then we can see only 1 pod with 1 replica.
+  
