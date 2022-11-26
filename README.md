@@ -31,6 +31,6 @@ Horizontal Pod Autoscaling in Kubernetes (minikube) <br/>
 * After few moments if the pods are checked then all 5 pods will be running. (replica count matching the figure from the HorizontalPodAutoscaler) <br/>
   $ kubectl get pods <br/>
   ![image](https://user-images.githubusercontent.com/92582005/204087844-804a1d9b-d455-4462-8faa-c82a85178f67.png) <br/>
-* Stooping the load - In the terminal where the Pod that runs a busybox image, terminate the load generation by typing <Ctrl> + C. <br/>
+* Stooping the load - In the terminal where the Pod that runs a busybox image, terminate the load generation by typing Control + C. <br/>
 * After few mins if we check the deployment and replicas then we can see only 1 pod with 1 replica.
   
