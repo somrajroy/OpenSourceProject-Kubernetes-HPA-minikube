@@ -1,8 +1,8 @@
-# Kubernetes-HPA
+## Kubernetes-Horizental Pod Autoscaler/Autoscaling
 Horizontal Pod Autoscaling in Kubernetes (minikube) <br/>
 * In Kubernetes, a HorizontalPodAutoscaler automatically updates a workload resource (such as a Deployment or StatefulSet), with the aim of automatically scaling the workload to match demand.<br/>
 * Kubernetes uses the horizontal pod autoscaler (HPA) to monitor the resource demand and automatically scale the number of replicas. <br/>
-* This method can also be referred to as scaling out. In this method, Kubernetes allows DevOps engineer, SRE, or your cluster admin to increase or decrease the number of pods automatically based upon application resource usage. The below diagrams explains the process.<br/><br/>
+* This method can also be referred to as scaling out. In this method, Kubernetes allows DevOps engineer, SRE, or cluster admin to increase or decrease the number of pods automatically based upon application resource usage. The below diagrams explains the process.<br/><br/>
 ![image](https://user-images.githubusercontent.com/92582005/204075069-1855a129-bf24-4bb8-8b99-5d0b4b6b06c3.png) <br/><br/>
 ![image](https://user-images.githubusercontent.com/92582005/204074904-19404232-0f72-4c9a-a9bf-4e291ff56670.png) <br/>
 ### Steps for HPA demo. <br/>
