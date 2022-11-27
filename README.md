@@ -26,7 +26,7 @@ Horizontal Pod Autoscaling in Kubernetes (minikube)<br/>
 * In main window run the below command. (type Ctrl+C to end the watch). Within a minute or so, the terminal should display the higher CPU load like the image below<br/>
   $ kubectl get hpa php-apache --watch <br/>
   ![image](https://user-images.githubusercontent.com/92582005/204087674-17e8a7d3-0492-4b44-ad98-0bb65ee2b7ab.png) <br/>
-* After the load increased the deployment size will also increase and can be seen by running below command.
+* After the load increased the deployment size will also increase and can be seen by running below command.<br/>
   $ kubectl get deployment php-apache <br/>
   ![image](https://user-images.githubusercontent.com/92582005/204087790-fbc727b5-6829-4494-a369-27349ee33b20.png) <br/>
 * After few moments if the pods are checked then all 5 pods will be running. (replica count matching the figure from the HorizontalPodAutoscaler) <br/>
