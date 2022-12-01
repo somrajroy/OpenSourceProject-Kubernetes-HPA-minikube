@@ -35,3 +35,7 @@ Horizontal Pod Autoscaling in Kubernetes (minikube). Ideally HPA needs to be don
 * Stoping the load - In the terminal where the Pod that runs a busybox image, terminate the load generation by typing Control + C. <br/>
 * After few mins if we check the deployment and replicas then we can see only 1 pod with 1 replica.
   
+ #### Further references<br/>
+* [How do I set up Kubernetes Metrics Server and Horizontal Pod Autoscaler on Amazon EKS?](https://aws.amazon.com/premiumsupport/knowledge-center/eks-metrics-server-pod-autoscaler/)<br/>
+* [Scale applications in Azure Kubernetes Service (AKS)](https://learn.microsoft.com/en-us/azure/aks/tutorial-kubernetes-scale?tabs=azure-cli)<br/>
+* [Scaling options for applications in Azure Kubernetes Service (AKS)](https://learn.microsoft.com/en-us/azure/aks/concepts-scale)<br/>
