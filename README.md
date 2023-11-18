@@ -39,3 +39,4 @@ Horizontal Pod Autoscaling in Kubernetes (minikube). Ideally HPA needs to be don
 * [How do I set up Kubernetes Metrics Server and Horizontal Pod Autoscaler on Amazon EKS?](https://aws.amazon.com/premiumsupport/knowledge-center/eks-metrics-server-pod-autoscaler/)<br/>
 * [Scale applications in Azure Kubernetes Service (AKS)](https://learn.microsoft.com/en-us/azure/aks/tutorial-kubernetes-scale?tabs=azure-cli)<br/>
 * [Scaling options for applications in Azure Kubernetes Service (AKS)](https://learn.microsoft.com/en-us/azure/aks/concepts-scale)<br/>
+* [Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]](https://www.youtube.com/watch?v=X48VuDVv0do)<br/>
